@@ -9,20 +9,19 @@ version.workspace = true
 
 [dependencies]
 async-trait.workspace = true
+cosmrs = { workspace = true, features = ["cosmwasm", "tokio", "grpc", "rpc"] }
 derive-new.workspace = true
 derive_builder.workspace = true
 ethers.workspace = true
 ethers-core.workspace = true
+eyre.workspace = true
 futures.workspace = true
-log.workspace = true
 maplit.workspace = true
-parking_lot.workspace = true
 prometheus.workspace = true
 reqwest.workspace = true
 serde = { workspace = true, features = ["derive"] }
 serde_json = { workspace = true }
 solana-client.workspace = true
-static_assertions.workspace = true
 tracing.workspace = true
 tokio = { workspace = true, features = ["time", "sync", "parking_lot"] }
 url.workspace = true

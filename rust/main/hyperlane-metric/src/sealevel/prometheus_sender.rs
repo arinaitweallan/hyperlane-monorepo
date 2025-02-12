@@ -112,8 +112,8 @@ async fn send_sealevel_rpc_request(
                 .header(CONTENT_TYPE, "application/json")
                 .body(request_json)
                 .send()
-                .await
-        }?;
+                .await?
+        };
 
         if !response.status().is_success() {
             if response.status() == StatusCode::TOO_MANY_REQUESTS && too_many_requests_retries > 0 {

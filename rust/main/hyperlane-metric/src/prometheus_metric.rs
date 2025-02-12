@@ -50,6 +50,12 @@ pub struct JsonRpcClientMetrics {
     pub request_duration_seconds: Option<CounterVec>,
 }
 
+impl std::fmt::Debug for JsonRpcClientMetrics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "JsonRpcClientMetrics")
+    }
+}
+
 /// Expected label names for the metric.
 pub const REQUEST_COUNT_LABELS: &[&str] = &["provider_node", "chain", "method", "status"];
 /// Help string for the metric.
@@ -71,6 +77,15 @@ pub struct PrometheusJsonRpcClientConfig {
 
     /// Information about the chain this client is for.
     pub chain: Option<ChainInfo>,
+}
+
+impl PrometheusJsonRpcClientConfig {
+    pub fn new(node: NodeInfo, chain: ChainInfo) -> Self {
+        Self {
+            node: Some(node),
+            chain: Some(chain),
+        }
+    }
 }
 
 /// Helper functions for displaying node and chain information
