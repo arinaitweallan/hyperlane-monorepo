@@ -2,8 +2,12 @@
 
 ### Setup
 
-- install `rustup`
-  - [link here](https://rustup.rs/)
+#### Install `rustup`
+- Run the following in your terminal, then follow the onscreen instructions.
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
 
 Note: You should be running >= version `1.72.1` of the rustc compiler, you can see that version with this command and
 should see similar output:
